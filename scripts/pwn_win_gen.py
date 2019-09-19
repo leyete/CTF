@@ -16,7 +16,7 @@ args = parser.parse_args()
 
 # Read the template file
 template = ''
-with open(path.expandvars('$HOME/CTF/Templates/pwn_win.py'), 'r') as f:
+with open(path.expandvars('$HOME/CTF/templates/pwn_win.py'), 'r') as f:
     template = f.read()
 
 # Replace the configuration parameters

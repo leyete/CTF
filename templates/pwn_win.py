@@ -3,7 +3,7 @@
 import argparse
 import pwn
 
-from pwnlib.utils.misc import run_in_new_terminal
+from pwnlib.util.misc import run_in_new_terminal
 
 # ====================================================================
 #                      CONFIGURATION PARAMETERS
@@ -23,9 +23,9 @@ port = None
 #   GLOBALS
 # ====================================================================
 
-T      = None      # The Target
-LIBC   = None      # Libc ELF
-BINARY = None      # Target binary ELF
+T     = None      # The Target
+LIBC  = None      # Libc ELF
+BIN   = None      # Target binary ELF
 
 # ====================================================================
 #   CLASSES AND FUNCTIONS
@@ -50,7 +50,8 @@ class Target:
     def attach(self):
         ''' Attach to the running process in a radare2 session '''
         if isinstance(self.tube, pwn.process):  # Only attach if we are running a binary
-            run_in_new_terminal('r2 -AAA -d %d' % self.tube.pid, terminal='tmux')
+            run_in_new_terminal('r2 -AAA -d %d' % self.tube.pid)
+            raw_input('PAUSED [PRESS ENTER TO CONTINUE]')
 
     # ================================================================
     #   CUSTOM ACTIONS: For easy interaction with the challenge
@@ -79,12 +80,11 @@ if __name__ == '__main__':
     if libc is not None:
         LIBC = pwn.ELF(libc, checksec=False)
     if binary is not None:
-        BINARY = pwn.ELF(binary, checksec=False)
+        BIN = pwn.ELF(binary, checksec=False)
 
     T = Target(args.remote, binary, libc, host, port)
 
     # ===============================================================
     #   EXPLOIT STARTS HERE
     # ===============================================================
-
 
