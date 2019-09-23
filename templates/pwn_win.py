@@ -82,7 +82,7 @@ if __name__ == '__main__':
     if binary is not None:
         BIN = pwn.ELF(binary, checksec=False)
 
-    T = Target(args.remote, binary, libc, host, port)
+    T = Target(args.remote, binary, libc, host, args.port or port)
 
     # ===============================================================
     #   EXPLOIT STARTS HERE
