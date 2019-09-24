@@ -1,0 +1,3 @@
+# Don't include files with flags in them
+flag.txt
+flags.txt
