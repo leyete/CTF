@@ -1,3 +1,6 @@
 # Don't include files with flags in them
 flag.txt
 flags.txt
+
+# Don't include the VPN files
+hackthebox/vpn/*
