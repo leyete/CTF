@@ -1,0 +1,3 @@
+# Ignore the flags and nmap scans 
+flags/
+nmap/
