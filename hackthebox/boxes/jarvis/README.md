@@ -364,7 +364,7 @@ Apart from the usual ones, we have **/bin/systemctl** available. This binary usu
 it controls the "System and Service Manager". With such power, we can exploit it to access the file system, escalate or mantain
 access with elevated privileges. From [GTFOBins](https://gtfobins.github.io/):
 
-```
+```bash
 TF=$(mktemp).service
 echo '[Service]
 Type=oneshot
